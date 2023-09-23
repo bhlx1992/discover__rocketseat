@@ -1,0 +1,269 @@
+body{
+    /*background-image: url(./assets/bg-mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    /*background:;
+    colorimagerepeatposition/size*/background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;
+    
+}
+
+body *{
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+:root{
+    --text-color: white;
+    --bg-url: url(./assets/bg-mobile.png);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+    --stroke-color: rgba(255,255,255,0.5);
+    --surface-color: rgba(255,255,255,0.05);
+    --surface-color-hover: rgba(0,0,0,0.02);
+    --highlight-color: rgba(255,255,255,0.2);
+    --switch-bg-url:  url(./assets/moon-stars.svg);
+}
+
+.light{
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.png);
+    --switch-bg-url: url(./assets/sun.svg);
+    --stroke-color: rgba(0,0,0,0.5);
+    --surface-color: rgba(0,0,0,0.1);
+    --surface-color-hover: rgba(250, 7, 7, 0.02);
+    --highlight-color: rgba(19, 19, 19, 0.192);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{ /*REMOVE AS CORES DO LINK*/
+    color: inherit;
+}
+#container{
+    width: 100%;
+    max-width: 590px;
+    padding: 0 24px;
+    /* height: 712px;*/
+    margin: 56px auto 0px;
+}
+
+#profile{
+    text-align: center;
+    padding: 24px;  
+}
+
+#profile img{   
+    width: 200px;
+    border: solid 4px red;
+    border-radius: 10%;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
+}
+
+.light #profile img{
+    border: solid 4px yellowgreen;
+}
+
+#profile p {
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+#switch {
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+
+#switch button {
+    background: white var(--switch-bg-url) no-repeat center;
+    border: solid 1px black;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    
+    right: 1;
+    z-index: 1;
+    transition: transform 0.2s;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    animation: slide-out 02.s;
+    -webkit-animation: slide-out 02.s;
+    -webkit-animation: slide-out 0.4s;
+    -webkit-transition: transform 0.2s;
+    -moz-transition: transform 0.2s;
+    -ms-transition: transform 0.2s;
+    -o-transition: transform 0.2s;
+}
+
+#switch button:hover{
+    outline: 7px solid var(--highlight-color);
+    position: absolute;
+}
+
+.light #switch button{
+    animation: slide-in 0.2s forwards;
+    /*forwards mantem as propriedades finais"to left:;
+    50%" do "slide-in"q foi criado*//*right: 0;
+    left: initial;
+    */-webkit-animation: slide-in 0.2s forwards;
+    -webkit-animation: slide-in 0.2s forwards;
+}
+
+#switch span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 99px;
+    -webkit-border-radius: 99px;
+    -moz-border-radius: 99px;
+    -ms-border-radius: 99px;
+    -o-border-radius: 99px;
+}
+
+/*links*/
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0;
+}
+
+.light ul li a {
+    background: rgba(255, 255, 255, 0.500);
+}
+
+ul li a {
+    display: flex;
+    justify-content: center;
+    padding: 16px 24px;
+    align-items: center;
+    /*__outraopçaoparacentralizar__display: block;
+    text-align: center;
+    */background: rgba(0, 0, 0, 0.500);
+    border: 1px solid rgba(255, 255, 255, 0.555);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: background 0.2s ;
+    -webkit-transition: background 0.2s ;
+    -moz-transition: background 0.2s ;
+    -ms-transition: background 0.2s ;
+    -o-transition: background 0.2s ;
+}
+
+.light ul li a:hover{
+    background: rgba(83, 248, 119, 0.377);
+    border: 1.5px solid rgb(255, 255, 255);
+}
+
+ul li a:hover{
+    background: rgba(248, 83, 83, 0.377);
+    border: 1.5px solid rgb(255, 255, 255);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+}
+
+#social__links{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px 0;
+    font-size: 40px;
+}
+
+#social__links a{
+    /*paradeixartotalmenteredondooBGdo:;
+    hover*/padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.light #social__links a:hover{
+    background: rgba(83, 248, 119, 0.377);
+    border-radius: 50% ;
+    -webkit-border-radius: 50% ;
+    -moz-border-radius: 50% ;
+    -ms-border-radius: 50% ;
+    -o-border-radius: 50% ;
+}
+
+#social__links a:hover{
+    background: rgba(248, 83, 83, 0.377);
+    border-radius: 50% ;
+    -webkit-border-radius: 50% ;
+    -moz-border-radius: 50% ;
+    -ms-border-radius: 50% ;
+    -o-border-radius: 50% ;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+footer{
+    padding: 24px 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+/*media queries */
+@media (min-width: 600px) {
+    :root {
+        --bg-url: url(./assets/bg-dark.png);
+    }
+    .light {
+        --bg-url: url(./assets/bg-light.png);
+    }
+}
+
+@keyframes slide-in{
+    from{
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-out{
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
+    }
+} 
+    
